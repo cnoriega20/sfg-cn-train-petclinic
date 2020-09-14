@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PetType {
+public class PetType extends BaseEntity{
     private String name;
 }

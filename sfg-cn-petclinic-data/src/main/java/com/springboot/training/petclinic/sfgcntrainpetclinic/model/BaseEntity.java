@@ -5,14 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Pet extends BaseEntity{
-    private PetType petType;
-    private Owner owner;
-    private LocalDate birthDate;
+public class BaseEntity implements Serializable {
+    private Long id;
 }

@@ -1,4 +1,4 @@
-package com.springboot.training.petclinic.sfgcntrainpetclinic;
+package sfgcntrainpetclinicweb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

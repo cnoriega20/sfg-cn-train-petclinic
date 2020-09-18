@@ -1,11 +1,11 @@
 package com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapS;
 
 import com.springboot.training.petclinic.sfgcntrainpetclinic.model.Pet;
-import com.springboot.training.petclinic.sfgcntrainpetclinic.services.PetClinicService;
+import com.springboot.training.petclinic.sfgcntrainpetclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetClinicService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {

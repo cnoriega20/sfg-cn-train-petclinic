@@ -1,11 +1,11 @@
 package com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapS;
 
 import com.springboot.training.petclinic.sfgcntrainpetclinic.model.Owner;
-import com.springboot.training.petclinic.sfgcntrainpetclinic.services.PetClinicService;
+import com.springboot.training.petclinic.sfgcntrainpetclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements PetClinicService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
 
     @Override
     public Set<Owner> findAll() {
@@ -35,5 +35,8 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
 
-
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
 }

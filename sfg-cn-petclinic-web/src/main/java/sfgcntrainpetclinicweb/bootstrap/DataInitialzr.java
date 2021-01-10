@@ -42,7 +42,7 @@ public class DataInitialzr implements CommandLineRunner {
 
         Owner owner2 = new Owner();
         owner2.setId(2L);
-        owner1.setFirstName("Claudia");
+        owner2.setFirstName("Claudia");
         owner2.setLastName("Lynwood");
 
         ownerService.save(owner2);

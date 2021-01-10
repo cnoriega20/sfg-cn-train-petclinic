@@ -31,13 +31,6 @@ public class DataInitialzr implements CommandLineRunner {
         petService = new PetServiceMap();
     }
 
-    /*public DataInitialzr(OwnerService ownerService, VetService vetService, PetService petService) {
-        this.ownerService = ownerService;
-        this.vetService = vetService;
-        this.petService = petService;
-    }*/
-
-
     @Override
     public void run(String... args) throws Exception {
         //Stub data for Owner, Vet and Pet

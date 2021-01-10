@@ -1,8 +1,8 @@
-package com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapimplementation;
+package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.mapimplementation;
 
-import com.springboot.training.petclinic.sfgcntrainpetclinic.model.Pet;
-import com.springboot.training.petclinic.sfgcntrainpetclinic.services.PetService;
 import org.springframework.stereotype.Service;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Pet;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.PetService;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package com.springboot.training.petclinic.sfgcntrainpetclinic.model;
+package sfgcntrainpetclinicweb.sfgcntrainpetclinic.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

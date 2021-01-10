@@ -1,4 +1,4 @@
-package com.springboot.training.petclinic.sfgcntrainpetclinic.services;
+package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services;
 
 import java.util.Set;
 

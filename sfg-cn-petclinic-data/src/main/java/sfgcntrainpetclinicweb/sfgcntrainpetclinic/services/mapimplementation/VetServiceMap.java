@@ -1,8 +1,8 @@
-package com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapimplementation;
+package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.mapimplementation;
 
-import com.springboot.training.petclinic.sfgcntrainpetclinic.model.Vet;
-import com.springboot.training.petclinic.sfgcntrainpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Vet;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.VetService;
 
 import java.util.Set;
 
@@ -23,7 +23,6 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
     public Vet save(Vet object) {
         return super.save(object.getId(), object);
     }
-
 
     @Override
     public void deleteById(Long id) {

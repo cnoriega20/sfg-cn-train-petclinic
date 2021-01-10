@@ -1,10 +1,12 @@
-package com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapS;
+package com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapimplementation;
 
 import com.springboot.training.petclinic.sfgcntrainpetclinic.model.Vet;
 import com.springboot.training.petclinic.sfgcntrainpetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override

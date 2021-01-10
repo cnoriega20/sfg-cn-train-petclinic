@@ -1,4 +1,4 @@
-package com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapS;
+package com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapimplementation;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -6,9 +6,9 @@ import com.springboot.training.petclinic.sfgcntrainpetclinic.model.Vet;
 import com.springboot.training.petclinic.sfgcntrainpetclinic.services.OwnerService;
 import com.springboot.training.petclinic.sfgcntrainpetclinic.services.PetService;
 import com.springboot.training.petclinic.sfgcntrainpetclinic.services.VetService;
-import com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapS.OwnerServiceMap;
-import com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapS.PetServiceMap;
-import com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapS.VetServiceMap;
+import com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapimplementation.OwnerServiceMap;
+import com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapimplementation.PetServiceMap;
+import com.springboot.training.petclinic.sfgcntrainpetclinic.services.mapimplementation.VetServiceMap;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -25,11 +25,17 @@ public class DataInitialzr implements CommandLineRunner {
 
     private final PetService petService;
 
-    public DataInitialzr() {
+    public DataInitialzr(){
         ownerService = new OwnerServiceMap();
         vetService = new VetServiceMap();
         petService = new PetServiceMap();
     }
+
+    /*public DataInitialzr(OwnerService ownerService, VetService vetService, PetService petService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
+        this.petService = petService;
+    }*/
 
 
     @Override

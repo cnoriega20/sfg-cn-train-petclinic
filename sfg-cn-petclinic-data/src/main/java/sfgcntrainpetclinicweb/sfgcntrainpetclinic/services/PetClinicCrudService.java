@@ -2,7 +2,7 @@ package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services;
 
 import java.util.Set;
 
-public interface PetClinicService <T, ID> {
+public interface PetClinicCrudService<T, ID> {
 
     Set<T> findAll();
 

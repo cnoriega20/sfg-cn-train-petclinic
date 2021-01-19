@@ -1,10 +1,12 @@
 package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.mapimplementation;
 
+import org.springframework.stereotype.Service;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.PetType;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.PetTypeService;
 
 import java.util.Set;
 
+@Service
 public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override

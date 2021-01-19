@@ -1,14 +1,15 @@
 package sfgcntrainpetclinicweb.bootstrap;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Owner;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Pet;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.PetType;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Vet;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.OwnerService;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.PetService;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.PetTypeService;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.VetService;
 
 import java.time.LocalDate;
@@ -23,11 +24,13 @@ public class DataInitialzr implements CommandLineRunner {
 
     private final PetService petService;
 
-    @Autowired
-    public DataInitialzr(OwnerService ownerService, VetService vetService, PetService petService) {
+    private final PetTypeService petTypeService;
+
+    public DataInitialzr(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petService = petService;
+        this.petTypeService = petTypeService;
     }
     @Override
     public void run(String... args) throws Exception {
@@ -80,6 +83,16 @@ public class DataInitialzr implements CommandLineRunner {
         petService.save(pet2);
 
         log.info("Loaded Pets...");
+
+        PetType petType1 = new PetType();
+        petType1.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(petType1);
+
+        PetType petType2 = new PetType();
+        petType2.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(petType2);
+
+        log.info("Loaded Pet Types...");
 
     }
 }

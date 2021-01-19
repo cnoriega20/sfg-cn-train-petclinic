@@ -2,5 +2,5 @@ package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services;
 
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Specialty;
 
-public interface SpecialtiesService extends PetClinicCrudService<Specialty, Long> {
+public interface SpecialtyService extends PetClinicCrudService<Specialty, Long> {
 }

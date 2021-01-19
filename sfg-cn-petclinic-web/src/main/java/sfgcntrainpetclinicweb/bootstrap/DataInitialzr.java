@@ -3,14 +3,8 @@ package sfgcntrainpetclinicweb.bootstrap;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Owner;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Pet;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.PetType;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Vet;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.OwnerService;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.PetService;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.PetTypeService;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.VetService;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.*;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.*;
 
 import java.time.LocalDate;
 
@@ -26,14 +20,24 @@ public class DataInitialzr implements CommandLineRunner {
 
     private final PetTypeService petTypeService;
 
-    public DataInitialzr(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService) {
+    private final SpecialtyService specialtyService;
+
+    public DataInitialzr(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService, SpecialtyService specialtyService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petService = petService;
         this.petTypeService = petTypeService;
+        this.specialtyService = specialtyService;
     }
     @Override
     public void run(String... args) throws Exception {
+        int count = petTypeService.findAll().size();
+        if(count == 0){
+            loadData();
+        }
+    }
+
+    private void loadData() {
         //Stub data for Owner, Vet and Pet and PetType
 
         PetType petType1 = new PetType();
@@ -45,6 +49,20 @@ public class DataInitialzr implements CommandLineRunner {
         PetType savedCatPetType = petTypeService.save(petType2);
 
         log.info("Loaded Pet Types...");
+
+        Specialty specialty1 = new Specialty();
+        specialty1.setDescription("Radiology");
+        Specialty savedRadiology = specialtyService.save(specialty1);
+
+        Specialty specialty2 = new Specialty();
+        specialty2.setDescription("Surgery");
+        Specialty savedSurgery = specialtyService.save(specialty2);
+
+        Specialty specialty3 = new Specialty();
+        specialty3.setDescription("dentistry");
+        Specialty savedDentistry = specialtyService.save(specialty3);
+
+        log.info("Loaded Specialties...");
 
         Owner owner1 = new Owner();
         owner1.setId(1L);
@@ -84,6 +102,7 @@ public class DataInitialzr implements CommandLineRunner {
         vet1.setId(1L);
         vet1.setFirstName("Sam");
         vet1.setLastName("Ferguson");
+        vet1.getSpecialties().add(savedRadiology);
 
         vetService.save(vet1);
 
@@ -91,7 +110,7 @@ public class DataInitialzr implements CommandLineRunner {
         vet2.setId(2L);
         vet2.setFirstName("Zoe");
         vet2.setLastName("Oakland");
-
+        vet1.getSpecialties().add(savedDentistry);
         vetService.save(vet2);
 
         log.info("Loaded Vets...");
@@ -111,8 +130,5 @@ public class DataInitialzr implements CommandLineRunner {
         petService.save(pet2);
 
         log.info("Loaded Pets...");
-
-
-
     }
 }

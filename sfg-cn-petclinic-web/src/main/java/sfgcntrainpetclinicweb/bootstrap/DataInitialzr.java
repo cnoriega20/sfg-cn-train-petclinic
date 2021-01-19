@@ -34,20 +34,48 @@ public class DataInitialzr implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception {
-        //Stub data for Owner, Vet and Pet
+        //Stub data for Owner, Vet and Pet and PetType
+
+        PetType petType1 = new PetType();
+        petType1.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(petType1);
+
+        PetType petType2 = new PetType();
+        petType2.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(petType2);
+
+        log.info("Loaded Pet Types...");
 
         Owner owner1 = new Owner();
         owner1.setId(1L);
         owner1.setFirstName("Joe");
         owner1.setLastName("Doe");
+        owner1.setAddress("134 Elm Street");
+        owner1.setCity("Burbank");
+        owner1.setTelephone("(971) 172-3098");
 
+        Pet cesarsPet = new Pet();
+        cesarsPet.setPetType(petType1);
+        cesarsPet.setOwner(owner1);
+        cesarsPet.setBirthDate(LocalDate.now());
+        cesarsPet.setName("Toby");
+        owner1.getPets().add(cesarsPet);
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setId(2L);
         owner2.setFirstName("Claudia");
         owner2.setLastName("Lynwood");
+        owner2.setAddress("123 Brickerel");
+        owner2.setCity("Miami");
+        owner2.setTelephone("(971) 172-3094");
 
+        Pet courtneysPet = new Pet();
+        courtneysPet.setName("Sammy");
+        courtneysPet.setOwner(owner2);
+        courtneysPet.setBirthDate(LocalDate.now());
+        courtneysPet.setPetType(savedCatPetType);
+        owner2.getPets().add(courtneysPet);
         ownerService.save(owner2);
 
         log.info("Loaded Owners...");
@@ -84,15 +112,7 @@ public class DataInitialzr implements CommandLineRunner {
 
         log.info("Loaded Pets...");
 
-        PetType petType1 = new PetType();
-        petType1.setName("Dog");
-        PetType savedDogPetType = petTypeService.save(petType1);
 
-        PetType petType2 = new PetType();
-        petType2.setName("Cat");
-        PetType savedCatPetType = petTypeService.save(petType2);
-
-        log.info("Loaded Pet Types...");
 
     }
 }

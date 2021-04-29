@@ -1,7 +1,7 @@
 package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.mapimplementation;
 
 import org.springframework.stereotype.Service;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Specialty;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Speciality;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Vet;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.SpecialtyService;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.VetService;
@@ -31,7 +31,7 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
         if(object.getSpecialties().size() > 0) {
             object.getSpecialties().forEach(specialty -> {
                 if(specialty.getId() == null) {
-                    Specialty savedSpecialty = specialtyService.save(specialty);
+                    Speciality savedSpecialty = specialtyService.save(specialty);
                     specialty.setId(savedSpecialty.getId());
                 }
             });

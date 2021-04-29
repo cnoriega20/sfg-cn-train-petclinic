@@ -50,17 +50,17 @@ public class DataInitialzr implements CommandLineRunner {
 
         log.info("Loaded Pet Types...");
 
-        Specialty specialty1 = new Specialty();
+        Speciality specialty1 = new Speciality();
         specialty1.setDescription("Radiology");
-        Specialty savedRadiology = specialtyService.save(specialty1);
+        Speciality savedRadiology = specialtyService.save(specialty1);
 
-        Specialty specialty2 = new Specialty();
+        Speciality specialty2 = new Speciality();
         specialty2.setDescription("Surgery");
-        Specialty savedSurgery = specialtyService.save(specialty2);
+        Speciality savedSurgery = specialtyService.save(specialty2);
 
-        Specialty specialty3 = new Specialty();
+        Speciality specialty3 = new Speciality();
         specialty3.setDescription("dentistry");
-        Specialty savedDentistry = specialtyService.save(specialty3);
+        Speciality savedDentistry = specialtyService.save(specialty3);
 
         log.info("Loaded Specialties...");
 

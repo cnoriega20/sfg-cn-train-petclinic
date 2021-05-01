@@ -102,7 +102,7 @@ public class DataInitialzr implements CommandLineRunner {
         vet1.setId(1L);
         vet1.setFirstName("Sam");
         vet1.setLastName("Ferguson");
-        vet1.getSpecialties().add(savedRadiology);
+        vet1.getSpecialities().add(savedRadiology);
 
         vetService.save(vet1);
 
@@ -110,7 +110,7 @@ public class DataInitialzr implements CommandLineRunner {
         vet2.setId(2L);
         vet2.setFirstName("Zoe");
         vet2.setLastName("Oakland");
-        vet1.getSpecialties().add(savedDentistry);
+        vet1.getSpecialities().add(savedDentistry);
         vetService.save(vet2);
 
         log.info("Loaded Vets...");

@@ -3,16 +3,16 @@ package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.mapimplementation;
 import org.springframework.stereotype.Service;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Speciality;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Vet;
-import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.SpecialtyService;
+import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.SpecialityService;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.VetService;
 
 import java.util.Set;
 
 @Service
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
-    private final SpecialtyService specialtyService;
+    private final SpecialityService specialtyService;
 
-    public VetMapService(SpecialtyService specialtyService) {
+    public VetMapService(SpecialityService specialtyService) {
         this.specialtyService = specialtyService;
     }
 

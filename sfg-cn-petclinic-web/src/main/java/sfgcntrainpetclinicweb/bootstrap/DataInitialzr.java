@@ -20,9 +20,9 @@ public class DataInitialzr implements CommandLineRunner {
 
     private final PetTypeService petTypeService;
 
-    private final SpecialtyService specialtyService;
+    private final SpecialityService specialtyService;
 
-    public DataInitialzr(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataInitialzr(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService, SpecialityService specialtyService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petService = petService;

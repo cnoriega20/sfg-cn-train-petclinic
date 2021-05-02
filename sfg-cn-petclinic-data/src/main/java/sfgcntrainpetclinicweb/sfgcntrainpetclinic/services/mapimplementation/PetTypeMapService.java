@@ -1,5 +1,6 @@
 package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.mapimplementation;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.PetType;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.PetTypeService;
@@ -7,6 +8,7 @@ import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.PetTypeService;
 import java.util.Set;
 
 @Service
+@Profile({"default", "mapServices"})
 public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override

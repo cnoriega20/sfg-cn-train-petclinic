@@ -1,10 +1,14 @@
 package sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.mapimplementation;
 
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Visit;
 import sfgcntrainpetclinicweb.sfgcntrainpetclinic.services.VisitService;
 
 import java.util.Set;
 
+@Service
+@Profile({"default", "mapServices"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override

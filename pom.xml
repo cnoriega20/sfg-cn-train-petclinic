@@ -17,7 +17,7 @@
     <artifactId>sfg-cn-train-petclinic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>sfg-cn-train-petclinic</name>
-    <description>Pet clinic is a Springboot project taking from SFG course</description>
+    <description>Pet clinic is a Springboot project template taken from SFG course</description>
 
     <properties>
         <java.version>11</java.version>

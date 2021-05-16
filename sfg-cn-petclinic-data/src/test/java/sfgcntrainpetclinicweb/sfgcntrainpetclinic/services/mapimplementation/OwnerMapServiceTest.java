@@ -6,8 +6,7 @@ import sfgcntrainpetclinicweb.sfgcntrainpetclinic.model.Owner;
 
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class OwnerMapServiceTest {
     OwnerMapService ownerMapService;
@@ -64,5 +63,7 @@ class OwnerMapServiceTest {
 
     @Test
     void findByLastName() {
+        Owner savedByName = ownerMapService.findByLastName(lastName);
+        assertNotEquals("Smith", savedByName.getLastName());
     }
 }

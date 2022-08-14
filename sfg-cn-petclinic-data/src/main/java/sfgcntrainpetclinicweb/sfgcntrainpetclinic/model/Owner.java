@@ -17,6 +17,7 @@ import java.util.Set;
 
 public class Owner extends Person {
 
+    // Attributes or member variables
     @Column(name = "address")
     private String address;
 

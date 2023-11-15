@@ -2,11 +2,6 @@ pipeline{
     agent any
 
     stages{
-        stage("checkout"){
-            steps{
-                git branch: "master", url: "https://github.com/cnoriega20/sfg-cn-train-petclinic"
-            }
-        }
 
         stage("build"){
             steps {
